@@ -1,9 +1,16 @@
 package com.mjc.stage2.parser;
 
-public class LexemeParser {
+import com.mjc.stage2.entity.AbstractTextComponent;
+import com.mjc.stage2.entity.SymbolLeaf;
+
+public class LexemeParser extends AbstractTextParser{
     private static final String LEXEME_REGEX = "\\s+";
-    private static final String WORD_REGEX = "\\w[\\w!=?():]+";
 
-    // Write your code here!
-
+    @Override
+    public void parse(AbstractTextComponent abstractTextComponent, String string) {
+        String[] split = string.split(LEXEME_REGEX);
+        for (String s : split) {
+            abstractTextComponent.add(new SymbolLeaf(s.charAt(0)));
+        }
+    }
 }
