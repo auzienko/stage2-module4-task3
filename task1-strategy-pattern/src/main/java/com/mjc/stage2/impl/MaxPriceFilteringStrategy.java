@@ -14,8 +14,6 @@ public class MaxPriceFilteringStrategy implements FilteringStrategy {
         if (product == null) {
             return false;
         }
-        Double max = maxPrice;
-        Double current = product.getPrice();
-        return max.equals(current);
+        return maxPrice > product.getPrice();
     }
 }
