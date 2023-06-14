@@ -13,8 +13,8 @@ public class WordParser extends AbstractTextParser {
     public void parse(AbstractTextComponent abstractTextComponent, String string) {
         Pattern pattern = Pattern.compile(WORD_REGEX);
         Matcher matcher = pattern.matcher(string);
-        for (int i = 1; i <= matcher.groupCount(); i++) {
-            nextParser.parse(abstractTextComponent, matcher.group(i));
+        while (matcher.find()) {
+            nextParser.parse(abstractTextComponent, matcher.group());
         }
     }
 }
