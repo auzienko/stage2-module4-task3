@@ -3,14 +3,13 @@ package com.mjc.stage2.entity;
 import java.util.ArrayList;
 import java.util.List;
 
-import static com.mjc.stage2.entity.TextComponentType.WORD;
-
 public class TextComponent extends AbstractTextComponent {
     protected List<AbstractTextComponent> componentList = new ArrayList<>();
 
-    public TextComponent() {
-        super(WORD);
+    public TextComponent(TextComponentType componentType) {
+        super(componentType);
     }
+
 
     @Override
     public String operation() {

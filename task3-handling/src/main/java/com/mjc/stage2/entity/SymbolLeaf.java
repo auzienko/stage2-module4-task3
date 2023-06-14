@@ -1,13 +1,11 @@
 package com.mjc.stage2.entity;
 
-import static com.mjc.stage2.entity.TextComponentType.SYMBOL;
-
 public class SymbolLeaf extends AbstractTextComponent {
 
     private final char value;
 
-    public SymbolLeaf(char value) {
-        super(SYMBOL);
+    public SymbolLeaf(TextComponentType componentType, char value) {
+        super(componentType);
         this.value = value;
     }
 
